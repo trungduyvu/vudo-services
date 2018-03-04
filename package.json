@@ -1,0 +1,49 @@
+{
+  "name": "vudo-services",
+  "version": "1.0.0",
+  "description": "Serverless microservices for Vudo app",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && babel -d dist/ src/ --ignore __mocks__,*.test.js",
+    "test": "concurrently \"eslint src\" \"flow\" \"jest --coverage\"",
+    "precommit": "yarn test",
+    "prepush": "yarn precommit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trungduyvu/vudo-services.git"
+  },
+  "author": "Trung Vu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trungduyvu/vudo-services/issues"
+  },
+  "homepage": "https://github.com/trungduyvu/vudo-services#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "concurrently": "^3.5.1",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-flowtype": "^2.46.1",
+    "eslint-plugin-import": "^2.9.0",
+    "flow-bin": "^0.66.0",
+    "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "rimraf": "^2.6.2",
+    "serverless": "^1.26.1",
+    "serverless-aws-alias": "^1.5.1",
+    "serverless-offline": "^3.18.0",
+    "serverless-prune-plugin": "^1.3.0"
+  },
+  "dependencies": {
+    "apollo-errors": "^1.7.1",
+    "apollo-server-lambda": "^1.3.2",
+    "graphql": "^0.13.1",
+    "graphql-tools": "^2.21.0"
+  }
+}
